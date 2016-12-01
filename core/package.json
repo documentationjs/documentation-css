@@ -1,0 +1,25 @@
+{
+  "name": "styledoc",
+  "version": "1.0.0",
+  "description": "generate documentation from comments in CSS",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "eslint lib && tap test -R spec"
+  },
+  "keywords": [
+    "css",
+    "style"
+  ],
+  "author": "Tom MacWright",
+  "license": "ISC",
+  "dependencies": {
+    "doctrine": "^2.0.0",
+    "postcss": "^5.2.6",
+    "vfile": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "tap": "^8.0.1",
+    "to-vfile": "^2.1.1"
+  }
+}

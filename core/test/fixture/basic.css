@@ -1,0 +1,8 @@
+/**
+ * Stylized box element.
+ * @example
+ * <div class='box'>This has a border around it.</div>
+ */
+.box {
+  border: 1px solid #000;
+}
