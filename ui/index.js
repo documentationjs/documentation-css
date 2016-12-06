@@ -17,6 +17,11 @@ class App extends React.Component {
     fetch(this.props.file)
       .then(response => response.text())
       .then(content => {
+        const styleTag = document.createElement('style');
+        styleTag.type = 'text/css';
+        styleTag.appendChild(document.createTextNode(content));
+        document.head.appendChild(styleTag);
+
         this.setState({
           loading: false,
           entries: styledoc.extract([{
