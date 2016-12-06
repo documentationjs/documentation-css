@@ -3839,3 +3839,51 @@ img.inline, .inline           { display:inline-block; }
   /* TODO Depreciate */
   .noprint { display:none; }
   }
+
+  /**
+   * Utility classes
+   * @namespace Utilities
+   */
+
+  /**
+   * Component classes
+   * @namespace Components
+   */
+
+  /**
+   * Fill color classes
+   * @namespace FillColors
+   * @memberof Utilities
+   */
+
+  /**
+   * Layout classes
+   * @namespace Layout
+   * @memberof Utilities
+   */
+
+  /**
+   * Padding classes
+   * @namespace Padding
+   * @memberof Layout
+   */
+
+  /**
+   * Margin classes
+   * @namespace Margin
+   * @memberof Layout
+   */
+  .margin-left-15 { margin-left: 15; }
+  .margin-top-15 { margin-top: 15; }
+  .margin-right-15 { margin-right: 15; }
+  .margin-bottom-15 { margin-bottom: 15; }
+  .margin-15 { margin: 15; }
+
+  /** @memberof Padding */
+  .padding-top-15 { padding-top: 15; }
+
+  /**
+   * A bluish hue
+   * @memberof FillColors
+  */
+  .fill-blue { background-color: blue; }

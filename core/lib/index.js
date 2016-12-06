@@ -58,62 +58,61 @@ function parseAndGroupDocs(roots) {
   var categories = {};
   var docs = [];
 
+  function processComment(commentNode) {
+    if (commentNode.text[0] !== '*') {
+      return;
+    }
+
+    var entry = {};
+
+    entry.parsedComment = postProcessComment(doctrine.parse(commentNode.text, { unwrap: true }));
+
+    var namespaceTag = findTag(entry.parsedComment, 'namespace');
+
+    // Assuming that members come after their namespace ...
+
+    var nextNode = commentNode.next();
+
+    if (namespaceTag !== undefined) {
+      categories[namespaceTag.name] = entry;
+      entry.members = [];
+
+      if (nextNode && nextNode.type === 'rule') {
+        getRuleGroup(nextNode).forEach(function (rule) {
+          var ruleEntry = {
+            parsedComment: {
+              description: '',
+              tags: [{
+                title: 'memberof',
+                description: namespaceTag.name
+              }]
+            },
+            referencedSource: rule
+          };
+          entry.members.push(ruleEntry);
+        });
+      }
+    }
+
+    if (nextNode.type !== 'comment') {
+      entry.referencedSource = nextNode;
+    }
+
+    var memberofTag = findTag(entry.parsedComment, 'memberof');
+
+    if (memberofTag !== undefined) {
+      var parentCategory = categories[memberofTag.description];
+      if (parentCategory === undefined) {
+        throw new Error('The @namespace "' + memberofTag.description + '" has not been declared');
+      }
+      return parentCategory.members.push(entry);
+    }
+
+    docs.push(entry);
+  }
+
   roots.forEach(function (root) {
-    root.walkComments(function (node) {
-      if (node.text[0] !== '*') {
-        return;
-      }
-
-      var entry = {};
-
-      entry.parsedComment = postProcessComment(doctrine.parse(node.text, { unwrap: true }));
-
-      var namespaceTag = findTag(entry.parsedComment, 'namespace');
-
-      // Assuming that members come after their namespace ...
-
-      var nextNode = node.next();
-
-      if (namespaceTag !== undefined) {
-        categories[namespaceTag.name] = entry;
-        entry.members = [];
-
-        if (nextNode && nextNode.type === 'rule') {
-          getRuleGroup(nextNode).forEach(function (rule) {
-            var ruleEntry = {
-              parsedComment: {
-                description: '',
-                tags: [{
-                  title: 'memberof',
-                  description: namespaceTag.name
-                }]
-              },
-              referencedSource: rule
-            };
-            entry.members.push(ruleEntry);
-          });
-        }
-
-        return docs.push(entry);
-      }
-
-      if (nextNode.type !== 'comment') {
-        entry.referencedSource = nextNode;
-      }
-
-      var memberofTag = findTag(entry.parsedComment, 'memberof');
-
-      if (memberofTag !== undefined) {
-        var parentCategory = categories[memberofTag.description];
-        if (parentCategory === undefined) {
-          throw new Error('The @namespace "' + memberofTag.description + '" has not been declared');
-        }
-        parentCategory.members.push(entry);
-        return;
-      }
-
-      docs.push(entry);
-    });
+    root.walkComments(processComment);
   });
 
   return docs;
