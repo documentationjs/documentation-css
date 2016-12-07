@@ -2,11 +2,13 @@ import React from 'react';
 import { Entry } from './entry';
 import { Heading } from './heading';
 import { hljsStyle } from './hljs-style';
+import { themeStyle } from './theme-style';
 import { addStyle } from './add-style';
 
 class Contents extends React.Component {
   componentWillMount() {
     addStyle(this.props.hljsStyle);
+    addStyle(this.props.themeStyle);
   }
 
   render() {

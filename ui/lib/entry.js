@@ -24,8 +24,8 @@ class Entry extends React.Component {
     const { showSource } = this.state;
 
     const example = props.parsedComment.example ? (<div>
-      <div className='pad1 keyline-all contain'>
-        <h4 className='micro pin-topright pad0y pad1x'>Example</h4>
+      <div>
+        <div>Example</div>
         <div dangerouslySetInnerHTML={{ __html: props.parsedComment.example.description }} />
       </div>
       <Lowlight
@@ -34,16 +34,19 @@ class Entry extends React.Component {
     </div>) : null
 
     return (
-      <div className='clearfix pad4y'>
-        <div className='col4'>
-          <div style={{ fontWeight: 'bold' }}>{props.referencedSource.selector}</div>
-          <div className='prose pad1y'>
+      <div className='clearfix'>
+        <div style={{ float: 'left', width: `${100/3}%`}}>
+          <div style={{ fontWeight: 'bold' }}>
+            {props.referencedSource.selector}
+          </div>
+          <div className='styledoc-description'>
             {remark().use(reactRenderer).process(props.parsedComment.description).contents}
           </div>
           <div>
             <div
               style={{ cursor: 'pointer' }}
-              onClick={this.toggleShowSource}>
+              onClick={this.toggleShowSource}
+            >
               {showSource ? '➖' : '➕'} Source
             </div>
             {showSource ? (<Lowlight
@@ -51,8 +54,11 @@ class Entry extends React.Component {
              value={props.referencedSource.toString()} />) : null}
           </div>
         </div>
-        <div className='col8'>
-          <div className='space-left1'>
+        <div style={{ float: 'left', width: `${100/3*2}%`}}>
+          <div
+            className='styledoc-example'
+            style={{ marginLeft: 10 }}
+          >
             {example}
           </div>
         </div>

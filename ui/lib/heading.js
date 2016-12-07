@@ -6,17 +6,14 @@ class Heading extends React.Component {
 
     const id = props.text.replace(/\s+/g, '-');
 
-    const link = (
-      <a href={`#${id}`}>
-        {props.text}
-      </a>
-    );
-
-    const headingEl = React.createElement(`h${props.level + 1}`, { id }, link);
-
     return (
-      <div>
-        {headingEl}
+      <div
+        id={id}
+        className={`styledoc-heading-${props.level}`}
+      >
+        <a href={`#${id}`}>
+          {props.text}
+        </a>
       </div>
     );
   }
