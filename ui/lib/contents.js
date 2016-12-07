@@ -7,8 +7,7 @@ import { addStyle } from './add-style';
 
 class Contents extends React.Component {
   componentWillMount() {
-    addStyle(this.props.hljsStyle);
-    addStyle(this.props.themeStyle);
+    addStyle(this.props.hljsStyle + '\n' + themeStyle);
   }
 
   render() {
