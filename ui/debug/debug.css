@@ -1,0 +1,56 @@
+/**
+ * Utility classes
+ * @namespace Utilities
+ */
+
+/**
+ * Component classes
+ * @namespace Components
+ */
+
+/**
+ * Fill color classes
+ * @namespace FillColors
+ * @memberof Utilities
+ */
+
+/**
+ * Layout classes
+ * @namespace Layout
+ * @memberof Utilities
+ */
+
+/**
+ * Margin classes
+ * @namespace Margin
+ * @memberof Layout
+ */
+
+.stroke {
+  border: 1px solid black;
+}
+
+/**
+ * Padding classes
+ * @namespace Padding
+ * @memberof Layout
+ * @example
+ * <div class="padding-left-15 stroke"></div>
+ * <div class="padding-right-15 stroke"></div>
+ */
+.padding-left-15 { padding-left: 15; }
+.padding-top-15 { padding-top: 15; }
+.padding-right-15 { padding-right: 15; }
+.padding-bottom-15 { padding-bottom: 15; }
+.padding-15 { padding: 15; }
+
+/** @memberof Margin */
+.margin-top-20 { margin-top: 20; }
+
+/**
+ * A bluish hue
+ * @memberof FillColors
+ * @example
+ * <div style="width: 40px; height: 40px;" class="fill-blue"></div>
+*/
+.fill-blue { background-color: blue; }

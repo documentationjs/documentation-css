@@ -1,13 +1,6 @@
-<html>
-<head>
-<link href='https://www.mapbox.com/base/latest/base.css?v1.0' rel='stylesheet' />
-<style>
-/*
+// github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
+export const hljsStyle = `
 .hljs {
   display: block;
   overflow-x: auto;
@@ -101,10 +94,4 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-strong {
   font-weight: bold;
 }
-</style>
-</head>
-<body>
-<div id='app'></div>
-<script src='styledoc.js'></script>
-</body>
-</html>
+`;
