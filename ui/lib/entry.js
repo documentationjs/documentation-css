@@ -34,7 +34,7 @@ class Entry extends React.Component {
     </div>) : null
 
     return (
-      <div className='clearfix'>
+      <div style={{ overflow: 'hidden' }}>
         <div style={{ float: 'left', width: `${100/3}%`}}>
           <div style={{ fontWeight: 'bold' }}>
             {props.referencedSource.selector}

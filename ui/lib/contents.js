@@ -7,7 +7,7 @@ import { addStyle } from './add-style';
 
 class Contents extends React.Component {
   componentWillMount() {
-    addStyle(this.props.hljsStyle + '\n' + themeStyle);
+    addStyle(this.props.hljsStyle + '\n' + this.props.themeStyle);
   }
 
   render() {
@@ -55,7 +55,8 @@ Contents.propTypes = {
 };
 
 Contents.defaultProps = {
-  hljsStyle
+  hljsStyle,
+  themeStyle
 };
 
 export { Contents };
