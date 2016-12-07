@@ -1,6 +1,6 @@
 {
   "name": "styledoc",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "generate documentation from comments in CSS",
   "main": "lib/index.js",
   "scripts": {
