@@ -21,24 +21,31 @@
  */
 
 /**
- * Padding classes
- * @namespace Padding
- * @memberof Layout
- */
-
-/**
  * Margin classes
  * @namespace Margin
  * @memberof Layout
  */
-.margin-left-15 { margin-left: 15; }
-.margin-top-15 { margin-top: 15; }
-.margin-right-15 { margin-right: 15; }
-.margin-bottom-15 { margin-bottom: 15; }
-.margin-15 { margin: 15; }
 
-/** @memberof Padding */
+.stroke {
+  border: 1px solid black;
+}
+
+/**
+ * Padding classes
+ * @namespace Padding
+ * @memberof Layout
+ * @example
+ * <div class="padding-left-15 stroke"></div>
+ * <div class="padding-right-15 stroke"></div>
+ */
+.padding-left-15 { padding-left: 15; }
 .padding-top-15 { padding-top: 15; }
+.padding-right-15 { padding-right: 15; }
+.padding-bottom-15 { padding-bottom: 15; }
+.padding-15 { padding: 15; }
+
+/** @memberof Margin */
+.margin-top-20 { margin-top: 20; }
 
 /**
  * A bluish hue

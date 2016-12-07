@@ -92,9 +92,7 @@ function parseAndGroupDocs(roots) {
           entry.members.push(ruleEntry);
         });
       }
-    }
-
-    if (nextNode.type !== 'comment') {
+    } else {
       entry.referencedSource = nextNode;
     }
 

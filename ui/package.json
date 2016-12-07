@@ -4,7 +4,7 @@
   "description": "styledoc default frontend",
   "main": "index.js",
   "scripts": {
-    "start": "budo index.js:styledoc.js --live",
+    "start": "budo debug/debug.js:styledoc.js --live",
     "build": "browserify index.js | uglifyjs -c -m > styledoc.js"
   },
   "browserify": {
