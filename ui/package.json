@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "budo debug/debug.js:styledoc.js --live",
+    "lint": "eslint .",
     "build": "browserify index.js | uglifyjs -c -m > styledoc.js"
   },
   "browserify": {
@@ -31,6 +32,8 @@
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
+    "eslint": "^3.11.1",
+    "eslint-plugin-react": "^6.8.0",
     "highlight.js": "^9.8.0",
     "lowlight": "^1.5.0",
     "react-lowlight": "^1.0.2",

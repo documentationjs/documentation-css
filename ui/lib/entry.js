@@ -31,7 +31,7 @@ class Entry extends React.Component {
       <Lowlight
         language='html'
         value={props.parsedComment.example.description} />
-    </div>) : null
+    </div>) : null;
 
     return (
       <div style={{ overflow: 'hidden' }}>

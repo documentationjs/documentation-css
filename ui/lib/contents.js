@@ -31,8 +31,8 @@ class Contents extends React.Component {
             level={level}
             {...entry}
           />
-        )
-      };
+        );
+      }
     }
     props.entries.map((entry) => addEntryAndMembers(entry, 1));
 

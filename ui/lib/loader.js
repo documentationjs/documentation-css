@@ -1,6 +1,5 @@
 import styledoc from '../../core';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Contents } from './contents';
 import { addStyle } from './add-style';
 
