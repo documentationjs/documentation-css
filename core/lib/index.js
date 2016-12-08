@@ -147,6 +147,11 @@ function parseAndGroupDocs(roots) {
 
     // Regular old members
     entry.type = 'member';
+    var nextNode = commentNode.next();
+    if (nextNode === undefined || nextNode.type !== 'rule') {
+      throw new Error('Members must be followed by rules');
+    }
+    entry.referencedSource = nextNode;
     addEntry(entry);
   }
 
