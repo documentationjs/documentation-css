@@ -1,41 +1,49 @@
 /**
  * Utility classes
- * @namespace Utilities
+ * @section Utilities
  */
 
 /**
  * Component classes
- * @namespace Components
+ * @section Components
  */
 
 /**
  * Fill color classes
- * @namespace FillColors
+ * @section FillColors
  * @memberof Utilities
  */
 
 /**
  * Layout classes
- * @namespace Layout
+ * @section Layout
  * @memberof Utilities
  */
 
 /**
  * Padding classes
- * @namespace Padding
+ * @section Padding
  * @memberof Layout
  */
 
 /**
  * Margin classes
- * @namespace Margin
+ * @section Margin
  * @memberof Layout
+ */
+
+/**
+ * @group
+ * @memberof Margin
+ * @example
+ * <div class="margin-15">
  */
 .margin-left-15 { margin-left: 15; }
 .margin-top-15 { margin-top: 15; }
 .margin-right-15 { margin-right: 15; }
 .margin-bottom-15 { margin-bottom: 15; }
 .margin-15 { margin: 15; }
+/** @endgroup */
 
 /** @memberof Padding */
 .padding-top-15 { padding-top: 15; }

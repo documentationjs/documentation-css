@@ -47,6 +47,10 @@ function getRuleGroup(rule) {
   return group;
 }
 
+function parseComment(node) {
+  return postProcessComment(doctrine.parse(node.text, { unwrap: true }));
+}
+
 /**
  * Group documentation, parsing comment nodes with doctrine
  * and attaching them to referenced code.
@@ -55,65 +59,102 @@ function getRuleGroup(rule) {
  * @return {Array} raw parsed documentation
  */
 function parseAndGroupDocs(roots) {
-  var categories = {};
-  var docs = [];
+  // Accumulates references to sections,
+  // so we can add members to their members arrays
+  var sections = {};
+
+  // Lists all entries, in order
+  var entries = [];
+
+  function addEntry(entry) {
+    // @memberof tags
+    var memberofTag = findTag(entry.parsedComment, 'memberof');
+    if (memberofTag !== undefined) {
+      var parentCategory = sections[memberofTag.description];
+      if (parentCategory === undefined) {
+        throw new Error('The section "' + memberofTag.description + '" has not been declared');
+      }
+      return parentCategory.members.push(entry);
+    }
+
+    entries.push(entry);
+  }
+
+  function addToGroup(group, node) {
+    if (node === undefined) {
+      return;
+    }
+    node.visited = true;
+
+    if (node.type === 'rule') {
+      group.members.push(node.selector);
+      return addToGroup(group, node.next());
+    }
+
+    if (node.type === 'comment') {
+      var parsedComment = parseComment(node);
+
+      // @endgroup tags
+      var endgroupTag = findTag(parsedComment, 'endgroup');
+      if (endgroupTag !== undefined) {
+        return;
+      }
+    }
+
+    throw new Error('You should have ended your group');
+  }
 
   function processComment(commentNode) {
+    if (commentNode.visited) {
+      return;
+    }
+    commentNode.visited = true;
+
     if (commentNode.text[0] !== '*') {
       return;
     }
 
     var entry = {};
 
-    entry.parsedComment = postProcessComment(doctrine.parse(commentNode.text, { unwrap: true }));
+    entry.parsedComment = parseComment(commentNode);
 
-    var namespaceTag = findTag(entry.parsedComment, 'namespace');
-
-    // Assuming that members come after their namespace ...
-
-    var nextNode = commentNode.next();
-
-    if (namespaceTag !== undefined) {
-      categories[namespaceTag.name] = entry;
+    // @section tags
+    var sectionTag = findTag(entry.parsedComment, 'section');
+    if (sectionTag !== undefined) {
+      if (sections[sectionTag.description] !== undefined) {
+        throw new Error(' The section "' + sectionTag.description + '" has already been declared');
+      }
+      sections[sectionTag.description] = entry;
+      entry.type = 'section';
+      entry.title = sectionTag.description;
       entry.members = [];
-
-      if (nextNode && nextNode.type === 'rule') {
-        getRuleGroup(nextNode).forEach(function (rule) {
-          var ruleEntry = {
-            parsedComment: {
-              description: '',
-              tags: [{
-                title: 'memberof',
-                description: namespaceTag.name
-              }]
-            },
-            referencedSource: rule
-          };
-          entry.members.push(ruleEntry);
-        });
-      }
-    } else {
-      entry.referencedSource = nextNode;
+      return addEntry(entry);
     }
 
-    var memberofTag = findTag(entry.parsedComment, 'memberof');
-
-    if (memberofTag !== undefined) {
-      var parentCategory = categories[memberofTag.description];
-      if (parentCategory === undefined) {
-        throw new Error('The @namespace "' + memberofTag.description + '" has not been declared');
-      }
-      return parentCategory.members.push(entry);
+    // @group tags
+    var groupTag = findTag(entry.parsedComment, 'group');
+    if (groupTag !== undefined) {
+      entry.type = 'group';
+      entry.members = [];
+      addToGroup(entry, commentNode.next());
+      return addEntry(entry);
     }
 
-    docs.push(entry);
+    var endgroupTag = findTag(entry.parsedComment, 'endgroup');
+    if (endgroupTag !== undefined) {
+      throw new Error('You cannot end a group you never started');
+    }
+
+    // Regular old members
+    entry.type = 'member';
+    addEntry(entry);
   }
 
   roots.forEach(function (root) {
     root.walkComments(processComment);
   });
 
-  return docs;
+  return entries;
 
 }
 

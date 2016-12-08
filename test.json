@@ -4,23 +4,21 @@
       "description": "Utility classes",
       "tags": [
         {
-          "title": "namespace",
-          "description": null,
-          "type": null,
-          "name": "Utilities"
+          "title": "section",
+          "description": "Utilities"
         }
       ]
     },
+    "type": "section",
+    "title": "Utilities",
     "members": [
       {
         "parsedComment": {
           "description": "Fill color classes",
           "tags": [
             {
-              "title": "namespace",
-              "description": null,
-              "type": null,
-              "name": "FillColors"
+              "title": "section",
+              "description": "FillColors"
             },
             {
               "title": "memberof",
@@ -28,6 +26,8 @@
             }
           ]
         },
+        "type": "section",
+        "title": "FillColors",
         "members": [
           {
             "parsedComment": {
@@ -39,57 +39,7 @@
                 }
               ]
             },
-            "referencedSource": {
-              "raws": {
-                "before": "\n",
-                "between": " ",
-                "semicolon": true,
-                "after": " "
-              },
-              "type": "rule",
-              "nodes": [
-                {
-                  "raws": {
-                    "before": " ",
-                    "between": ": "
-                  },
-                  "type": "decl",
-                  "source": {
-                    "start": {
-                      "line": 47,
-                      "column": 14
-                    },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 47,
-                      "column": 36
-                    }
-                  },
-                  "prop": "background-color",
-                  "value": "blue"
-                }
-              ],
-              "source": {
-                "start": {
-                  "line": 47,
-                  "column": 1
-                },
-                "input": {
-                  "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                  "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                },
-                "end": {
-                  "line": 47,
-                  "column": 38
-                }
-              },
-              "selector": ".fill-blue",
-              "lastEach": 1,
-              "indexes": {}
-            }
+            "type": "member"
           }
         ]
       },
@@ -98,10 +48,8 @@
           "description": "Layout classes",
           "tags": [
             {
-              "title": "namespace",
-              "description": null,
-              "type": null,
-              "name": "Layout"
+              "title": "section",
+              "description": "Layout"
             },
             {
               "title": "memberof",
@@ -109,16 +57,16 @@
             }
           ]
         },
+        "type": "section",
+        "title": "Layout",
         "members": [
           {
             "parsedComment": {
               "description": "Padding classes",
               "tags": [
                 {
-                  "title": "namespace",
-                  "description": null,
-                  "type": null,
-                  "name": "Padding"
+                  "title": "section",
+                  "description": "Padding"
                 },
                 {
                   "title": "memberof",
@@ -126,6 +74,8 @@
                 }
               ]
             },
+            "type": "section",
+            "title": "Padding",
             "members": [
               {
                 "parsedComment": {
@@ -137,57 +87,7 @@
                     }
                   ]
                 },
-                "referencedSource": {
-                  "raws": {
-                    "before": "\n",
-                    "between": " ",
-                    "semicolon": true,
-                    "after": " "
-                  },
-                  "type": "rule",
-                  "nodes": [
-                    {
-                      "raws": {
-                        "before": " ",
-                        "between": ": "
-                      },
-                      "type": "decl",
-                      "source": {
-                        "start": {
-                          "line": 41,
-                          "column": 19
-                        },
-                        "input": {
-                          "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                          "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                        },
-                        "end": {
-                          "line": 41,
-                          "column": 34
-                        }
-                      },
-                      "prop": "padding-top",
-                      "value": "15"
-                    }
-                  ],
-                  "source": {
-                    "start": {
-                      "line": 41,
-                      "column": 1
-                    },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 41,
-                      "column": 36
-                    }
-                  },
-                  "selector": ".padding-top-15",
-                  "lastEach": 1,
-                  "indexes": {}
-                }
+                "type": "member"
               }
             ]
           },
@@ -196,10 +96,8 @@
               "description": "Margin classes",
               "tags": [
                 {
-                  "title": "namespace",
-                  "description": null,
-                  "type": null,
-                  "name": "Margin"
+                  "title": "section",
+                  "description": "Margin"
                 },
                 {
                   "title": "memberof",
@@ -207,369 +105,41 @@
                 }
               ]
             },
+            "type": "section",
+            "title": "Margin",
             "members": [
               {
                 "parsedComment": {
                   "description": "",
                   "tags": [
                     {
-                      "title": "memberof",
-                      "description": "Margin"
-                    }
-                  ]
-                },
-                "referencedSource": {
-                  "raws": {
-                    "before": "\n",
-                    "between": " ",
-                    "semicolon": true,
-                    "after": " "
-                  },
-                  "type": "rule",
-                  "nodes": [
-                    {
-                      "raws": {
-                        "before": " ",
-                        "between": ": "
-                      },
-                      "type": "decl",
-                      "source": {
-                        "start": {
-                          "line": 34,
-                          "column": 19
-                        },
-                        "input": {
-                          "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                          "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                        },
-                        "end": {
-                          "line": 34,
-                          "column": 34
-                        }
-                      },
-                      "prop": "margin-left",
-                      "value": "15"
-                    }
-                  ],
-                  "source": {
-                    "start": {
-                      "line": 34,
-                      "column": 1
+                      "title": "group",
+                      "description": null
                     },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 34,
-                      "column": 36
-                    }
-                  },
-                  "selector": ".margin-left-15",
-                  "lastEach": 1,
-                  "indexes": {}
-                }
-              },
-              {
-                "parsedComment": {
-                  "description": "",
-                  "tags": [
                     {
                       "title": "memberof",
                       "description": "Margin"
-                    }
-                  ]
-                },
-                "referencedSource": {
-                  "raws": {
-                    "before": "\n",
-                    "between": " ",
-                    "semicolon": true,
-                    "after": " "
-                  },
-                  "type": "rule",
-                  "nodes": [
+                    },
                     {
-                      "raws": {
-                        "before": " ",
-                        "between": ": "
-                      },
-                      "type": "decl",
-                      "source": {
-                        "start": {
-                          "line": 35,
-                          "column": 18
-                        },
-                        "input": {
-                          "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                          "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                        },
-                        "end": {
-                          "line": 35,
-                          "column": 32
-                        }
-                      },
-                      "prop": "margin-top",
-                      "value": "15"
+                      "title": "example",
+                      "description": "<div class=\"margin-15\">"
                     }
                   ],
-                  "source": {
-                    "start": {
-                      "line": 35,
-                      "column": 1
-                    },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 35,
-                      "column": 34
-                    }
-                  },
-                  "selector": ".margin-top-15",
-                  "lastEach": 1,
-                  "indexes": {}
-                }
-              },
-              {
-                "parsedComment": {
-                  "description": "",
-                  "tags": [
-                    {
-                      "title": "memberof",
-                      "description": "Margin"
-                    }
-                  ]
+                  "example": {
+                    "title": "example",
+                    "description": "<div class=\"margin-15\">"
+                  }
                 },
-                "referencedSource": {
-                  "raws": {
-                    "before": "\n",
-                    "between": " ",
-                    "semicolon": true,
-                    "after": " "
-                  },
-                  "type": "rule",
-                  "nodes": [
-                    {
-                      "raws": {
-                        "before": " ",
-                        "between": ": "
-                      },
-                      "type": "decl",
-                      "source": {
-                        "start": {
-                          "line": 36,
-                          "column": 20
-                        },
-                        "input": {
-                          "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                          "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                        },
-                        "end": {
-                          "line": 36,
-                          "column": 36
-                        }
-                      },
-                      "prop": "margin-right",
-                      "value": "15"
-                    }
-                  ],
-                  "source": {
-                    "start": {
-                      "line": 36,
-                      "column": 1
-                    },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 36,
-                      "column": 38
-                    }
-                  },
-                  "selector": ".margin-right-15",
-                  "lastEach": 1,
-                  "indexes": {}
-                }
-              },
-              {
-                "parsedComment": {
-                  "description": "",
-                  "tags": [
-                    {
-                      "title": "memberof",
-                      "description": "Margin"
-                    }
-                  ]
-                },
-                "referencedSource": {
-                  "raws": {
-                    "before": "\n",
-                    "between": " ",
-                    "semicolon": true,
-                    "after": " "
-                  },
-                  "type": "rule",
-                  "nodes": [
-                    {
-                      "raws": {
-                        "before": " ",
-                        "between": ": "
-                      },
-                      "type": "decl",
-                      "source": {
-                        "start": {
-                          "line": 37,
-                          "column": 21
-                        },
-                        "input": {
-                          "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                          "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                        },
-                        "end": {
-                          "line": 37,
-                          "column": 38
-                        }
-                      },
-                      "prop": "margin-bottom",
-                      "value": "15"
-                    }
-                  ],
-                  "source": {
-                    "start": {
-                      "line": 37,
-                      "column": 1
-                    },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 37,
-                      "column": 40
-                    }
-                  },
-                  "selector": ".margin-bottom-15",
-                  "lastEach": 1,
-                  "indexes": {}
-                }
-              },
-              {
-                "parsedComment": {
-                  "description": "",
-                  "tags": [
-                    {
-                      "title": "memberof",
-                      "description": "Margin"
-                    }
-                  ]
-                },
-                "referencedSource": {
-                  "raws": {
-                    "before": "\n",
-                    "between": " ",
-                    "semicolon": true,
-                    "after": " "
-                  },
-                  "type": "rule",
-                  "nodes": [
-                    {
-                      "raws": {
-                        "before": " ",
-                        "between": ": "
-                      },
-                      "type": "decl",
-                      "source": {
-                        "start": {
-                          "line": 38,
-                          "column": 14
-                        },
-                        "input": {
-                          "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                          "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                        },
-                        "end": {
-                          "line": 38,
-                          "column": 24
-                        }
-                      },
-                      "prop": "margin",
-                      "value": "15"
-                    }
-                  ],
-                  "source": {
-                    "start": {
-                      "line": 38,
-                      "column": 1
-                    },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 38,
-                      "column": 26
-                    }
-                  },
-                  "selector": ".margin-15",
-                  "lastEach": 1,
-                  "indexes": {}
-                }
+                "type": "group",
+                "members": [
+                  ".margin-left-15",
+                  ".margin-top-15",
+                  ".margin-right-15",
+                  ".margin-bottom-15",
+                  ".margin-15"
+                ]
               }
-            ],
-            "referencedSource": {
-              "raws": {
-                "before": "\n",
-                "between": " ",
-                "semicolon": true,
-                "after": " "
-              },
-              "type": "rule",
-              "nodes": [
-                {
-                  "raws": {
-                    "before": " ",
-                    "between": ": "
-                  },
-                  "type": "decl",
-                  "source": {
-                    "start": {
-                      "line": 34,
-                      "column": 19
-                    },
-                    "input": {
-                      "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                      "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                    },
-                    "end": {
-                      "line": 34,
-                      "column": 34
-                    }
-                  },
-                  "prop": "margin-left",
-                  "value": "15"
-                }
-              ],
-              "source": {
-                "start": {
-                  "line": 34,
-                  "column": 1
-                },
-                "input": {
-                  "css": "/**\n * Utility classes\n * @namespace Utilities\n */\n\n/**\n * Component classes\n * @namespace Components\n */\n\n/**\n * Fill color classes\n * @namespace FillColors\n * @memberof Utilities\n */\n\n/**\n * Layout classes\n * @namespace Layout\n * @memberof Utilities\n */\n\n/**\n * Padding classes\n * @namespace Padding\n * @memberof Layout\n */\n\n/**\n * Margin classes\n * @namespace Margin\n * @memberof Layout\n */\n.margin-left-15 { margin-left: 15; }\n.margin-top-15 { margin-top: 15; }\n.margin-right-15 { margin-right: 15; }\n.margin-bottom-15 { margin-bottom: 15; }\n.margin-15 { margin: 15; }\n\n/** @memberof Padding */\n.padding-top-15 { padding-top: 15; }\n\n/**\n * A bluish hue\n * @memberof FillColors\n*/\n.fill-blue { background-color: blue; }\n",
-                  "file": "/Users/davidclark/dev/mapbox/styledoc/core/test/fixture/categories.css"
-                },
-                "end": {
-                  "line": 34,
-                  "column": 36
-                }
-              },
-              "selector": ".margin-left-15",
-              "lastEach": 1,
-              "indexes": {}
-            }
+            ]
           }
         ]
       }
@@ -580,13 +150,13 @@
       "description": "Component classes",
       "tags": [
         {
-          "title": "namespace",
-          "description": null,
-          "type": null,
-          "name": "Components"
+          "title": "section",
+          "description": "Components"
         }
       ]
     },
+    "type": "section",
+    "title": "Components",
     "members": []
   }
 ]
