@@ -52,7 +52,7 @@ function getEntries(roots) {
     if (memberofTag !== undefined) {
       var parentCategory = sections[memberofTag.description];
       if (parentCategory === undefined) {
-        throw entry.node('The section "' + memberofTag.description + '" has not been declared');
+        throw entry.error('The section "' + memberofTag.description + '" has not been declared');
       }
       return parentCategory.members.push(entry);
     }
