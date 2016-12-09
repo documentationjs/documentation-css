@@ -131,7 +131,7 @@ function getEntries(roots) {
     // Regular old members
     entry.type = 'member';
     var nextNode = commentNode.next();
-    if (nextNode !== undefined && nextNode.type !== 'rule') {
+    if (nextNode !== undefined && nextNode.type === 'rule') {
       entry.referencedSource = nextNode;
     }
     addEntry(entry);
