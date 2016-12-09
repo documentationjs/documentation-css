@@ -1,21 +1,21 @@
 var postcss = require('postcss');
 var doctrine = require('doctrine');
 
-function postProcessComment(comment) {
-  var examples = comment.tags.filter(function (tag) {
+function postProcessComment(doctrineParsedComment, node) {
+  var examples = doctrineParsedComment.tags.filter(function (tag) {
     return tag.title === 'example';
   });
   if (examples.length > 1) {
-    throw new Error('Only one @example tag is permitted');
+    throw node.error('Only one @example tag is permitted');
   }
   if (examples.length === 1) {
-    comment.example = examples[0];
+    doctrineParsedComment.example = examples[0];
   }
-  return comment;
+  return doctrineParsedComment;
 }
 
 function parseComment(node) {
-  return postProcessComment(doctrine.parse(node.text, { unwrap: true }));
+  return postProcessComment(doctrine.parse(node.text, { unwrap: true }), node);
 }
 
 /**
@@ -52,7 +52,7 @@ function getEntries(roots) {
     if (memberofTag !== undefined) {
       var parentCategory = sections[memberofTag.description];
       if (parentCategory === undefined) {
-        throw entry.error('The section "' + memberofTag.description + '" has not been declared');
+        throw entry.node.error('The section "' + memberofTag.description + '" has not been declared');
       }
       return parentCategory.members.push(entry);
     }
