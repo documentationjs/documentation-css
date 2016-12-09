@@ -14,6 +14,10 @@ function postProcessComment(comment) {
   return comment;
 }
 
+function parseComment(node) {
+  return postProcessComment(doctrine.parse(node.text, { unwrap: true }));
+}
+
 /**
  * Find a tag in a doctrine-parsed comment.
  *
@@ -28,37 +32,13 @@ function findTag(entry, tagTitle) {
 }
 
 /**
- * Returns all the rules, starting with a provided rule,
- * separated only by a newline.
- *
- * @param {Rule} rule PostCSS rule node
- * @return {Array<Rule>} The group of rules
- */
-function getRuleGroup(rule) {
-  var group = [rule];
-  var nextNode = rule.next();
-  while (nextNode.type === 'rule') {
-    if (nextNode.raws.before !== '\n') {
-      break;
-    }
-    group.push(nextNode);
-    nextNode = nextNode.next();
-  }
-  return group;
-}
-
-function parseComment(node) {
-  return postProcessComment(doctrine.parse(node.text, { unwrap: true }));
-}
-
-/**
  * Group documentation, parsing comment nodes with doctrine
  * and attaching them to referenced code.
  *
  * @param {Array<Root>} roots parsed Root objects from postcss
  * @return {Array} raw parsed documentation
  */
-function parseAndGroupDocs(roots) {
+function getEntries(roots) {
   // Accumulates references to sections,
   // so we can add members to their members arrays
   var sections = {};
@@ -72,7 +52,7 @@ function parseAndGroupDocs(roots) {
     if (memberofTag !== undefined) {
       var parentCategory = sections[memberofTag.description];
       if (parentCategory === undefined) {
-        throw new Error('The section "' + memberofTag.description + '" has not been declared');
+        throw entry.node('The section "' + memberofTag.description + '" has not been declared');
       }
       return parentCategory.members.push(entry);
     }
@@ -84,6 +64,7 @@ function parseAndGroupDocs(roots) {
     if (node === undefined) {
       return;
     }
+    // Prevent this node from being revisited by processComment
     node.visited = true;
 
     if (node.type === 'rule') {
@@ -101,10 +82,11 @@ function parseAndGroupDocs(roots) {
       }
     }
 
-    throw new Error('You should have ended your group');
+    throw node.error('You should have ended your group');
   }
 
   function processComment(commentNode) {
+    // In case this node was already visited as part of a group
     if (commentNode.visited) {
       return;
     }
@@ -116,13 +98,14 @@ function parseAndGroupDocs(roots) {
 
     var entry = {};
 
+    entry.node = commentNode;
     entry.parsedComment = parseComment(commentNode);
 
     // @section tags
     var sectionTag = findTag(entry.parsedComment, 'section');
     if (sectionTag !== undefined) {
       if (sections[sectionTag.description] !== undefined) {
-        throw new Error(' The section "' + sectionTag.description + '" has already been declared');
+        throw commentNode.error('The section "' + sectionTag.description + '" has already been declared');
       }
       sections[sectionTag.description] = entry;
       entry.type = 'section';
@@ -142,14 +125,14 @@ function parseAndGroupDocs(roots) {
 
     var endgroupTag = findTag(entry.parsedComment, 'endgroup');
     if (endgroupTag !== undefined) {
-      throw new Error('You cannot end a group you never started');
+      throw commentNode.error('You cannot end a group you never started');
     }
 
     // Regular old members
     entry.type = 'member';
     var nextNode = commentNode.next();
     if (nextNode === undefined || nextNode.type !== 'rule') {
-      throw new Error('Members must be followed by rules');
+      throw commentNode.error('Members must be followed by rules');
     }
     entry.referencedSource = nextNode;
     addEntry(entry);
@@ -175,7 +158,7 @@ function extract(files) {
     return postcss.parse(file.contents, { from: file.path });
   });
 
-  var groupedRawDocs = parseAndGroupDocs(parsedCSS);
+  var groupedRawDocs = getEntries(parsedCSS);
 
   return groupedRawDocs;
 
