@@ -131,10 +131,9 @@ function getEntries(roots) {
     // Regular old members
     entry.type = 'member';
     var nextNode = commentNode.next();
-    if (nextNode === undefined || nextNode.type !== 'rule') {
-      throw commentNode.error('Members must be followed by rules');
+    if (nextNode !== undefined && nextNode.type !== 'rule') {
+      entry.referencedSource = nextNode;
     }
-    entry.referencedSource = nextNode;
     addEntry(entry);
   }
 
