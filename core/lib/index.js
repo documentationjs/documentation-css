@@ -15,7 +15,13 @@ function postProcessComment(doctrineParsedComment, node) {
 }
 
 function parseComment(node) {
-  return postProcessComment(doctrine.parse(node.text, { unwrap: true }), node);
+  var parsed = postProcessComment(doctrine.parse(node.text, { unwrap: true }), node);
+  parsed.source = {
+    filename: node.source.input.from,
+    line: node.source.start.line,
+    column: node.source.start.column
+  };
+  return parsed;
 }
 
 /**
