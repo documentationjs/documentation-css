@@ -1,6 +1,15 @@
 var postcss = require('postcss');
 var doctrine = require('doctrine');
 
+// Accumulates references to sections,
+// so we can add members to their members arrays
+var sections = {};
+
+// Lists all entries, in order
+var entries = [];
+
+var sectionMembersQueue = {};
+
 function postProcessComment(doctrineParsedComment, node) {
   var examples = doctrineParsedComment.tags.filter(function (tag) {
     return tag.title === 'example';
@@ -45,22 +54,17 @@ function findTag(entry, tagTitle) {
  * @return {Array} raw parsed documentation
  */
 function getEntries(roots) {
-  // Accumulates references to sections,
-  // so we can add members to their members arrays
-  var sections = {};
-
-  // Lists all entries, in order
-  var entries = [];
-
   function addEntry(entry) {
     // @memberof tags
     var memberofTag = findTag(entry.parsedComment, 'memberof');
     if (memberofTag !== undefined) {
-      var parentCategory = sections[memberofTag.description];
-      if (parentCategory === undefined) {
-        throw entry.node.error('The section "' + memberofTag.description + '" has not been declared');
+      var parentSection = sections[memberofTag.description];
+      if (parentSection === undefined) {
+        sectionMembersQueue[memberofTag.description] = (sectionMembersQueue[memberofTag.description] || [])
+          .concat(entry);
+        return;
       }
-      return parentCategory.members.push(entry);
+      return parentSection.members.push(entry);
     }
 
     entries.push(entry);
@@ -116,7 +120,7 @@ function getEntries(roots) {
       sections[sectionTag.description] = entry;
       entry.type = 'section';
       entry.title = sectionTag.description;
-      entry.members = [];
+      entry.members = sectionMembersQueue[sectionTag.description] || [];
       return addEntry(entry);
     }
 
